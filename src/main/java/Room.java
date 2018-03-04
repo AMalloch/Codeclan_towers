@@ -1,25 +1,37 @@
 import java.util.ArrayList;
 
 public abstract class Room {
-    private Integer capacity;
     private ArrayList<Guest> guests;
+    private RoomType roomType;
 
-    public Room (Integer capacity){
-        this.capacity = capacity;
+    public Room (RoomType roomType){
+        this.roomType = roomType;
         this.guests = new ArrayList<>();
     }
 
+    public ArrayList<Guest> getGuest() {
+        return guests;
+    }
+
     public int getRoomCapacity(){
-        return this.capacity;
+        return this.roomType.getCapacity();
+    }
+
+    public boolean checkRoomOccupied() {
+        if (this.guests.size() > 0) {
+            return true;
+        }return false;
     }
 
     public void addGuest(Guest guest){
-        if(getRoomCapacity() < this.capacity){
-            this.guests.add(guest);
-        }
+        this.guests.add(guest);
     }
 
     public void removeGuest(Guest guest){
         this.guests.remove(guest);
+    }
+
+    public RoomType getRoomType(){
+        return roomType;
     }
 }
