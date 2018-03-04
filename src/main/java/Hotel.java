@@ -6,9 +6,9 @@ public class Hotel {
     private ArrayList<DiningRoom> diningRooms;
 
     public Hotel(){
-        this.bedrooms =  new ArrayList<>();
-        this.conferenceRooms =  new ArrayList<>();
-        this.diningRooms =  new ArrayList<>();
+        this.bedrooms = new ArrayList<>();
+        this.conferenceRooms = new ArrayList<>();
+        this.diningRooms = new ArrayList<>();
     }
 
     public void addBedroom(Bedroom bedroom){
@@ -47,7 +47,45 @@ public class Hotel {
         }
     }
 
-    public void removeBedroomGuest(Guest guest){
-        this.bedrooms.removeGuest(guest);
+    public void removeBedroomGuest(Guest guest, RoomType room) {
+        for (Bedroom bedroom : this.bedrooms) {
+            bedroom.removeGuest(guest);
+        }
+    }
+
+    public void removeConferenceGuest (Guest guest, RoomType room){
+        for (ConferenceRoom conferenceRoom : this.conferenceRooms){
+            conferenceRoom.removeGuest(guest);
+        }
+    }
+
+    public void removeDiningGuest (Guest guest, RoomType room){
+        for (DiningRoom diningRoom : this.diningRooms){
+            diningRoom.removeGuest(guest);
+        }
+    }
+
+    public void checkBedroomOccupied (Guest guest, RoomType room){
+        for (Bedroom bedroom : this.bedrooms){
+            bedroom.checkRoomOccupied();
+        }
+    }
+
+    public void checkDiningRoomOccupied (Guest guest, RoomType room){
+        for (DiningRoom diningRoom : this.diningRooms){
+            diningRoom.checkRoomOccupied();
+        }
+    }
+
+    public void checkConferenceOccupied (Guest guest, RoomType room){
+        for (ConferenceRoom conferenceRoom : this.conferenceRooms){
+            conferenceRoom.checkRoomOccupied();
+        }
+    }
+
+    public void checkCurrentGuestsBedroom (Guest guest, RoomType room){
+        for (Bedroom bedroom : this.bedrooms){
+            bedroom.getGuest();
+        }
     }
 }

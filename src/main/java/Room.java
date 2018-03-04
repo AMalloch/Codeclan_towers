@@ -13,8 +13,8 @@ public abstract class Room {
         return guests;
     }
 
-    public int getRoomCapacity(){
-        return this.roomType.getCapacity();
+    public int countGuests(){
+        return this.guests.size();
     }
 
     public boolean checkRoomOccupied() {
