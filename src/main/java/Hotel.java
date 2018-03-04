@@ -88,4 +88,16 @@ public class Hotel {
             bedroom.getGuest();
         }
     }
+
+    public void checkCurrentGuestsConferenceRoom (Guest guest, RoomType room){
+        for (ConferenceRoom conferenceRoom : this.conferenceRooms){
+            conferenceRoom.getGuest();
+        }
+    }
+
+    public void checkCurrentGuestsDiningRoom (Guest guest, RoomType room){
+        for (DiningRoom diningRoom : this.diningRooms){
+            diningRoom.getGuest();
+        }
+    }
 }
