@@ -3,7 +3,8 @@ public enum RoomType {
     DOUBLE(2, "Double Bedroom"),
     FAMILY(4, "Family Bedroom"),
     THORNTONDINING(200, "Thornton Restaurant"),
-    MALVEYDINING(300, "Malvey Restaurant");
+    MALVEYDINING(300, "Malvey Restaurant"),
+    CONFERENCE(150, "Conference Room");
 
     private int capacity;
     private String type;

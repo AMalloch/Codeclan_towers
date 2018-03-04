@@ -7,8 +7,8 @@ public class DiningRoomTest {
 
     @Before
     public void before() {
-        thorntonDining = new DiningRoom(RoomSize.THORNTONDINING.getRoomSize(), "Thornton Restaurant");
-        malveyDining = new DiningRoom(RoomSize.MALVEYDINING.getRoomSize(), "Malvey Restaurant");
+        thorntonDining = new DiningRoom(RoomType.THORNTONDINING);
+        malveyDining = new DiningRoom(RoomType.MALVEYDINING);
     }
 
 }
