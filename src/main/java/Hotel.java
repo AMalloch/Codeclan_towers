@@ -11,6 +11,10 @@ public class Hotel {
         this.diningRooms = new ArrayList<>();
     }
 
+    public int countBedroomSize(){
+        return this.bedrooms.size();
+    }
+
     public void addBedroom(Bedroom bedroom){
         this.bedrooms.add(bedroom);
     }
@@ -83,21 +87,21 @@ public class Hotel {
         }
     }
 
-    public void checkCurrentGuestsBedroom (Guest guest, RoomType room){
+    public Guest checkCurrentGuestsBedroom (Guest guest, RoomType room){
         for (Bedroom bedroom : this.bedrooms){
             bedroom.getGuest();
-        }
+        } return(guest);
     }
 
-    public void checkCurrentGuestsConferenceRoom (Guest guest, RoomType room){
+    public Guest checkCurrentGuestsConferenceRoom (Guest guest, RoomType room){
         for (ConferenceRoom conferenceRoom : this.conferenceRooms){
             conferenceRoom.getGuest();
-        }
+        } return(guest);
     }
 
-    public void checkCurrentGuestsDiningRoom (Guest guest, RoomType room){
+    public Guest checkCurrentGuestsDiningRoom (Guest guest, RoomType room){
         for (DiningRoom diningRoom : this.diningRooms){
             diningRoom.getGuest();
-        }
+        } return(guest);
     }
 }
