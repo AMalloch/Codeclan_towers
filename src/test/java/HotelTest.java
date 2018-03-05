@@ -25,8 +25,11 @@ public class HotelTest {
     }
 
     @Test
-    public void canAddGuest() {
-        conferenceRoom.addGuest(conferenceRoom);
-        assertEquals(1, conferenceRoom.countGuests());
+    public void canAddBedroom() {
+        bedr.addBedroom(bedroom);
+        assertEquals(1, bedroom.countGuests());
     }
+
+//   Ok confused myself give up, how can I make an instance of bedroom when I need to
+//    add in a room type?! Think i'm doing the TDD wrong :(
 }
